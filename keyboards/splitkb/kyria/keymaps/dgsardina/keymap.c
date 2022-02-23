@@ -14,6 +14,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #include QMK_KEYBOARD_H
+#include "keymap_spanish.h"
 
 enum layers {
     _QWERTY = 0,
@@ -43,8 +44,8 @@ enum layers {
 
 #define RALT_ENT MT(MOD_RALT, KC_ENT)
 #define SYM_BSPC LT(     SYM, KC_BSPC)
-#define LSFT_LPR MT(MOD_LSFT, KC_LPRN)
-#define RSFT_RPR MT(MOD_RSFT, KC_RPRN)
+#define LSFT_LPR MT(MOD_LSFT, ES_LPRN)
+#define RSFT_RPR MT(MOD_RSFT, ES_RPRN)
 // Note: LAlt/Enter (ALT_ENT) is not the same thing as the keyboard shortcut Alt+Enter.
 // The notation `mod/tap` denotes a key that activates the modifier `mod` when held down, and
 // produces the key `tap` when tapped (i.e. pressed and released).
