@@ -45,6 +45,22 @@ enum layers {
 
 #define RALT_ENT MT(MOD_RALT, KC_ENT)
 #define SYM_BSPC LT(     SYM, KC_BSPC)
+
+// Overrides
+const key_override_t delete_key_override =   ko_make_basic(MOD_MASK_SHIFT, KC_BSPC, KC_DEL);
+const key_override_t left_braket_override =  ko_make_basic(MOD_MASK_SHIFT, ES_LBRC, ES_LCBR);
+const key_override_t right_braket_override = ko_make_basic(MOD_MASK_SHIFT, ES_RBRC, ES_RCBR);
+
+// This globally defines all key overrides to be used
+const key_override_t **key_overrides = (const key_override_t *[]){
+    &delete_key_override,
+    &left_braket_override,
+    &right_braket_override,
+    NULL // Null terminate the array of overrides!
+};
+
+
+// 
 // Note: LAlt/Enter (ALT_ENT) is not the same thing as the keyboard shortcut Alt+Enter.
 // The notation `mod/tap` denotes a key that activates the modifier `mod` when held down, and
 // produces the key `tap` when tapped (i.e. pressed and released).
@@ -152,7 +168,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_SYM] = LAYOUT(
       ES_MORD,   ES_1 ,   ES_2 ,   ES_3 ,   ES_4 ,   ES_5 ,                                       ES_6 ,   ES_7 ,  ES_8 ,    ES_9 ,   ES_0 , ES_QUOT,
       ES_FORD, ES_EXLM, ES_DQUO, ES_BULT,  ES_DLR, ES_PERC,                                     ES_AMPR, ES_SLSH, ES_LPRN, ES_RPRN,  ES_EQL, ES_QUES,
-     ES_BSLS , ES_PIPE,  ES_AT , ES_HASH, ES_TILD, ES_EURO, _______, _______, _______, _______, ES_IQUE, ES_IEXL, ES_ASTR, _______, ES_PLUS, ES_IQUE,
+ES_BSLS , ES_PIPE,  ES_AT , ES_HASH, ES_TILD, ES_EURO, _______, _______, _______, _______, ES_IQUE, ES_IEXL, ES_ASTR, _______, ES_CCED, S(ES_CCED),
                                  _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
     ),
 
