@@ -36,3 +36,11 @@
   // every other tick, lower the resolution to 2.
   #define ENCODER_RESOLUTION 2
 #endif
+
+// Pimoroni trackball settings
+#ifdef POINTING_DEVICE_ENABLE
+  //#define POINTING_DEVICE_TASK_THROTTLE_MS 6
+  #define POINTING_DEVICE_INVERT_X
+  #define POINTING_DEVICE_INVERT_Y
+#endif
+
