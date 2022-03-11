@@ -77,17 +77,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
  * |Ctrl/Esc|   A  |   S  |   D  |   F  |   G  |                              |   H  |   J  |   K  |   L  |   Ñ  |Ctrl/' "|
  * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
- * |Shift/<>|   Z  |   X  |   C  |   V  |   B  | [ {  |CapsLk|  |F-keys|  ] } |   N  |   M  |  , ; |  . : |  - _ |Shift/+*|
+ * |Shift/<>|   Z  |   X  |   C  |   V  |   B  | [ {  | ] }  |  |F-keys|CapsLk|   N  |   M  |  , ; |  . : |  - _ |Shift/+*|
  * `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
- *                        |Adjust| LGUI | LAlt/| Space| Nav  |  | Sym  | Back | AltGr| RGUI | Menu |
+ *                        |Adjust| LGUI | LAlt/| Space| Nav  |  | Sym  | Back | Shift| RGUI | Menu |
  *                        |      |      | Enter|      |      |  |      |      |      |      |      |
  *                        `----------------------------------'  `----------------------------------'
  */
     [_QWERTY] = LAYOUT(
      KC_TAB  , KC_Q ,  KC_W   ,  KC_E  ,   KC_R ,   KC_T ,                                        KC_Y,   KC_U ,  KC_I ,   KC_O ,  KC_P ,   ES_GRV,
      CTL_ESC , KC_A ,  KC_S   ,  KC_D  ,   KC_F ,   KC_G ,                                        KC_H,   KC_J ,  KC_K ,   KC_L ,ES_NTIL, CTL_ACUT,
-     LSFT_LT , KC_Z ,  KC_X   ,  KC_C  ,   KC_V ,   KC_B , ES_LBRC,KC_CAPS,     FKEYS  , ES_RBRC, KC_N,   KC_M ,ES_COMM, ES_DOT ,ES_MINS, RSFT_PLS,
-                                 ADJUST, KC_LGUI, ALT_ENT, KC_SPC ,OSM_LSFT   , TO(_SYM), KC_BSPC ,KC_RALT, KC_RGUI, KC_APP
+     LSFT_LT , KC_Z ,  KC_X   ,  KC_C  ,   KC_V ,   KC_B , ES_LBRC, ES_RBRC,     FKEYS , KC_CAPS, KC_N,   KC_M ,ES_COMM, ES_DOT ,ES_MINS, RSFT_PLS,
+                                 ADJUST, KC_LGUI, ALT_ENT, KC_SPC ,OSL(_NAV), OSL(_SYM), KC_BSPC, OSM_LSFT, KC_RGUI, KC_APP
     ),
 /*
  * Base Layer: Dvorak
@@ -107,7 +107,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      KC_TAB  ,KC_QUOTE,KC_COMM,  KC_DOT,   KC_P ,   KC_Y ,                                        KC_F,   KC_G ,  KC_C ,   KC_R ,  KC_L , KC_BSPC,
      CTL_ESC , KC_A ,  KC_O   ,  KC_E  ,   KC_U ,   KC_I ,                                        KC_D,   KC_H ,  KC_T ,   KC_N ,  KC_S , CTL_ACUT,
      KC_LSFT ,KC_SCLN, KC_Q   ,  KC_J  ,   KC_K ,   KC_X , KC_LBRC,KC_CAPS,     FKEYS  , KC_RBRC, KC_B,   KC_M ,  KC_W ,   KC_V ,  KC_Z , KC_RSFT,
-                                 ADJUST, KC_LGUI, ALT_ENT, KC_SPC , NAV   ,     SYM    , KC_SPC ,KC_RALT, KC_RGUI, KC_APP
+                                 _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
     ),
 
 /*
@@ -149,7 +149,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       ES_MORD,   ES_1 ,   ES_2 ,   ES_3 ,   ES_4 ,   ES_5 ,                                       ES_6 ,   ES_7 ,  ES_8 ,    ES_9 ,   ES_0 , ES_QUOT,
       ES_FORD, ES_EXLM, ES_DQUO, ES_BULT,  ES_DLR, ES_PERC,                                     ES_AMPR, ES_SLSH, ES_LPRN, ES_RPRN,  ES_EQL, ES_QUES,
 ES_BSLS , ES_PIPE,  ES_AT , ES_HASH, ES_TILD, ES_EURO, _______, _______, _______, _______, ES_IQUE, ES_IEXL, ES_ASTR, _______, ES_CCED, S(ES_CCED),
-                                 _______, _______, _______, TO(0), _______, TO(_NAV), _______, _______, _______, _______
+                                 _______, _______, _______, TO(0), TO(_NAV), TO(_SYM), _______, _______, _______, _______
     ),
 
 /*
@@ -170,7 +170,7 @@ ES_BSLS , ES_PIPE,  ES_AT , ES_HASH, ES_TILD, ES_EURO, _______, _______, _______
       _______, _______, _______, _______, _______, _______,                                     _______, KC_HOME, _______,   KC_END,  KC_VOLU, KC_DEL,
       _______, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, _______,                                     KC_LEFT, KC_DOWN, KC_UP  , KC_RGHT, KC_VOLD, KC_INS,
       _______, _______, _______, _______, _______, _______, _______, KC_SLCK, _______, _______,KC_PAUSE, KC_MPRV, KC_MPLY, KC_MNXT, KC_MUTE, KC_PSCR,
-                                 _______, _______, _______, TO(0), _______, TO(_NAV), _______, _______, _______, _______
+                                 _______, _______, _______, TO(0), TO(_NAV), TO(_SYM), _______, _______, _______, _______
     ),
 
 /*
