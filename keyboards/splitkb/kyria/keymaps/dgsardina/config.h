@@ -30,6 +30,9 @@
 // Lets you roll mod-tap keys
 #define IGNORE_MOD_TAP_INTERRUPT
 
+// Faster trigger of mod when pressing the second key without releasing the first
+#define PERMISSIVE_HOLD
+
 // Enable rapid switch from tap to hold, disables double tap hold auto-repeat.
 //#define TAPPING_FORCE_HOLD
 
