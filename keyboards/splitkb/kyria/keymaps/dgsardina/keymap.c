@@ -175,7 +175,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       ES_MORD,   ES_1 ,   ES_2 ,   ES_3 ,   ES_4 ,   ES_5 ,                                       ES_6 ,   ES_7 ,  ES_8 ,    ES_9 ,   ES_0 , ES_QUOT,
       ES_FORD, ES_EXLM, ES_DQUO, ES_BULT,  ES_DLR, ES_PERC,                                     ES_AMPR, ES_SLSH, ES_LPRN, ES_RPRN,  ES_EQL, ES_QUES,
 ES_BSLS , ES_PIPE,  ES_AT , ES_HASH, ES_TILD, ES_EURO, _______, _______, _______, _______, ES_IQUE, ES_IEXL, ES_ASTR, _______, ES_CCED, S(ES_CCED),
-                                 _______, _______, _______, TO(0), TO(_NAV), TO(_SYM), _______, _______, _______, _______
+                                 _______, _______, _______, TO(0), TO(_NAV), _______, _______, _______, _______, _______
     ),
 
 /*
@@ -196,7 +196,7 @@ ES_BSLS , ES_PIPE,  ES_AT , ES_HASH, ES_TILD, ES_EURO, _______, _______, _______
       _______, _______, _______, _______, _______, _______,                                     _______, KC_HOME, _______,   KC_END,  KC_VOLU, KC_DEL,
       _______, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, _______,                                     KC_LEFT, KC_DOWN, KC_UP  , KC_RGHT, KC_VOLD, KC_INS,
       _______, _______, _______, _______, _______, _______, _______, KC_SLCK, _______, _______,KC_PAUSE, KC_MPRV, KC_MPLY, KC_MNXT, KC_MUTE, KC_PSCR,
-                                 _______, _______, _______, TO(0), TO(_NAV), TO(_SYM), _______, _______, _______, _______
+                                 _______, _______, _______, TO(0), _______, TO(_SYM), _______, _______, _______, _______
     ),
 
 /*
