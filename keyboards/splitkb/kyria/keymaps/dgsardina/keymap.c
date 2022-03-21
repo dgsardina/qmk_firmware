@@ -342,7 +342,7 @@ bool oled_task_user(void) {
 
 #ifdef ENCODER_ENABLE
 bool encoder_update_user(uint8_t index, bool clockwise) {
-    if (get_highest_layer(layer_state|default_layer_state) < _NAV) {
+    if (get_highest_layer(layer_state|default_layer_state) < _SYM) {
         if (index == 0) {
             // Up & Down
             if (clockwise) {
