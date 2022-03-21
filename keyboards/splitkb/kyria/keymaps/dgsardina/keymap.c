@@ -45,7 +45,7 @@ enum layers {
 
 #define RALT_ENT MT(MOD_RALT, KC_ENT)
 #define SYM_BSPC LT(     SYM, KC_BSPC)
-#define NAV_ENT LT(     SYM, KC_BSPC)
+#define NAV_ESC  LT(    _NAV, KC_ESC)
 #define OSM_LSFT OSM(MOD_LSFT)
 
 // Fixing EURO character in linux default es keymap 
@@ -108,15 +108,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
  * |Shift/<>|   Z  |   X  |   C  |   V  |   B  | [ {  | ] }  |  |F-keys|CapsLk|   N  |   M  |  , ; |  . : |  - _ |Shift/+*|
  * `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
- *                        |Adjust| LGUI | LAlt/| Space| Nav  |  | Sym  | Back | Shift| RGUI | Menu |
- *                        |      |      | Enter|      |      |  |      |      |      |      |      |
+ *                        |Adjust| LGUI | LAlt/| Space| Nav/ |  | Sym  | Back | Shift| RGUI | Menu |
+ *                        |      |      | Enter|      | Esc  |  |      |      |      |      |      |
  *                        `----------------------------------'  `----------------------------------'
  */
     [_QWERTY] = LAYOUT(
      KC_TAB  , KC_Q ,  KC_W   ,  KC_E  ,   KC_R ,   KC_T ,                                        KC_Y,   KC_U ,  KC_I ,   KC_O ,  KC_P ,   ES_GRV,
      CTL_ESC , GUI_A, ALT_S   , CTL_D  ,  SFT_F ,   KC_G,                                         KC_H,  SFT_J , CTL_K ,  ALT_L ,GUI_NTIL,CTL_ACUT,
      LSFT_LT , KC_Z ,  KC_X   ,  KC_C  ,   KC_V ,   KC_B , ES_LBRC, ES_RBRC,     FKEYS , KC_CAPS, KC_N,   KC_M ,ES_COMM, ES_DOT ,ES_MINS, RSFT_PLS,
-                                 ADJUST, KC_LGUI, ALT_ENT, KC_SPC ,OSL(_NAV), OSL(_SYM), KC_BSPC, OSM_LSFT, KC_RGUI, KC_APP
+                                 ADJUST, KC_LGUI, ALT_ENT, KC_SPC , NAV_ESC,  OSL(_SYM), KC_BSPC, OSM_LSFT, KC_RGUI, KC_APP
     ),
 /*
  * Base Layer: Dvorak
