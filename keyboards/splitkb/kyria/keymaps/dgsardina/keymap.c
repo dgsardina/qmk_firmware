@@ -168,7 +168,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
  * |    ª   |  !   |  "   |  €   |  $   |  %   |                              |   &  |  /   |  (   |  )   |  =   |   ?    |
  * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
- * |    \   |   |  |  @   |  #   |  ~   |  ·   |      |      |  |      |      |   ¿  |  ¡   |      |      |  ç   |   Ç    |
+ * |    ·   |   |  |  @   |  #   |  ~   |   \  |      |      |  |      |      |   ¿  |  ¡   | , ;  | . :  |  ç   |   Ç    |
  * `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
  *                        |      |      |      |      |      |  |      |      |      |      |      |
  *                        |      |      |      |      |      |  |      |      |      |      |      |
@@ -177,7 +177,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_SYM] = LAYOUT(
       ES_MORD,   ES_1 ,   ES_2 ,   ES_3 ,   ES_4 ,   ES_5 ,                                       ES_6 ,   ES_7 ,  ES_8 ,    ES_9 ,   ES_0 , ES_QUOT,
       ES_FORD, ES_EXLM, ES_DQUO,  ES_EUR,  ES_DLR, ES_PERC,                                     ES_AMPR, ES_SLSH, ES_LPRN, ES_RPRN,  ES_EQL, ES_QUES,
-      ES_BSLS , ES_PIPE,  ES_AT, ES_HASH, ES_TILD, ES_BULT, _______, _______, _______, _______, ES_IQUE, ES_IEXL, ES_ASTR, _______, ES_CCED, S(ES_CCED),
+      ES_BULT, ES_PIPE,   ES_AT, ES_HASH, ES_TILD, ES_BSLS, _______, _______, _______, _______, ES_IQUE, ES_IEXL, ES_ASTR, _______, ES_CCED, S(ES_CCED),
                                  _______, _______, _______, TO(0), TO(_NAV), _______, _______, _______, _______, _______
     ),
 
