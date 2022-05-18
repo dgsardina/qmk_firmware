@@ -104,19 +104,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ,-------------------------------------------.                              ,-------------------------------------------.
  * |        |   Q  |   W  |   E  |   R  |   T  |                              |   Y  |   U  |   I  |   O  |   P  |  ` ^   |
  * |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
- * |        |   A  |   S  |   D  |   F  |   G  |                              |   H  |   J  |   K  |   L  |   Ñ  |Ctrl/' "|
+ * |        |   A  |   S  |   D  |   F  |   G  |                              |   H  |   J  |   K  |   L  |   Ñ  |        |
  * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
  * |        |   Z  |   X  |   C  |   V  |   B  | [ {  | ] }  |  |F-keys|CapsLk|   N  |   M  |  , ; |  . : |  - _ |Shift/+*|
  * `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
- *                        |Adjust| LGUI | LAlt/| Space| Nav/ |  | Sym/ | Back | Shift| RGUI | Menu |
+ *                        |Adjust| LGUI | LAlt/| Space| Nav/ |  | Sym/ | Back |  ´ ¨ |CapsLk| Menu |
  *                        |      |      | Enter|      | Esc  |  | Tab  |      |      |      |      |
  *                        `----------------------------------'  `----------------------------------'
  */
     [_QWERTY] = LAYOUT(
-       KC_NO , KC_Q ,  KC_W   ,  KC_E  ,   KC_R ,   KC_T ,                                        KC_Y,   KC_U ,  KC_I ,   KC_O ,  KC_P ,   ES_GRV,
-       KC_NO , GUI_A, ALT_S   , CTL_D  ,  SFT_F ,   KC_G,                                         KC_H,  SFT_J , CTL_K ,  ALT_L ,GUI_NTIL, ES_ACUT,
+       KC_NO , KC_Q ,  KC_W   ,  KC_E  ,   KC_R ,   KC_T ,                                        KC_Y,   KC_U ,  KC_I ,   KC_O ,  KC_P ,  ES_GRV,
+       KC_NO , GUI_A, ALT_S   , CTL_D  ,  SFT_F ,   KC_G,                                         KC_H,  SFT_J , CTL_K ,  ALT_L ,GUI_NTIL, KC_NO,
        KC_NO , KC_Z ,  KC_X   ,  KC_C  ,   KC_V ,   KC_B , ES_LBRC, ES_RBRC,     FKEYS , KC_CAPS, KC_N,   KC_M ,ES_COMM, ES_DOT ,ES_MINS,  ES_PLUS,
-                                 ADJUST, KC_LGUI, ALT_ENT, KC_SPC , NAV_ESC,   SYM_TAB , KC_BSPC, OSM_LSFT, KC_RGUI, KC_APP
+                                 ADJUST, KC_LGUI, ALT_ENT, KC_SPC , NAV_ESC,   SYM_TAB , KC_BSPC, ES_ACUT, KC_CAPS, KC_APP
     ),
 /*
  * Base Layer: Dvorak
