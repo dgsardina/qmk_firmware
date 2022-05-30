@@ -17,9 +17,9 @@
 #include "keymap_spanish.h"
 
 enum layers {
-    _QWERTY = 0,
+    _COLEMAK_DH = 0,
+    _QWERTY,
     _DVORAK,
-    _COLEMAK_DH,
     _SYM,
     _NAV,
     _FUNCTION,
@@ -99,24 +99,44 @@ const key_override_t **key_overrides = (const key_override_t *[]){
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /*
- * Base Layer: QWERTY
+ * Base Layer: Colemak DH
  *
  * ,-------------------------------------------.                              ,-------------------------------------------.
- * |        |   Q  |   W  |   E  |   R  |   T  |                              |   Y  |   U  |   I  |   O  |   P  |  ` ^   |
+ * |        |   Q  |   W  |   F  |   P  |   B  |                              |   J  |   L  |   U  |   Y  |   Ñ  |  ` ^   |
  * |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
- * |        |   A  |   S  |   D  |   F  |   G  |                              |   H  |   J  |   K  |   L  |   Ñ  |        |
+ * |        |   A  |   R  |   S  |   T  |   G  |                              |   M  |   N  |   E  |   I  |   O  |        |
  * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
- * |        |   Z  |   X  |   C  |   V  |   B  | [ {  | ] }  |  |F-keys|CapsLk|   N  |   M  |  , ; |  . : |  - _ |  + *   |
+ * |        |   Z  |   X  |   C  |   D  |   V  |      |      |  |      |      |   K  |   H  |  , ; |  . : |  - _ |  + *   |
  * `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
  *                        |Adjust| LGUI | LAlt/| Space| Nav/ |  | Sym/ | Back |  ´ ¨ | RGUI | Menu |
  *                        |      |      | Enter|      | Esc  |  | Tab  |      |      |      |      |
  *                        `----------------------------------'  `----------------------------------'
  */
+    [_COLEMAK_DH] = LAYOUT(
+        KC_NO,   KC_Q ,  KC_W ,  KC_F  ,   KC_P ,   KC_B ,                                        KC_J,   KC_L ,  KC_U ,   KC_Y ,ES_NTIL, ES_GRV,
+        KC_NO,   GUI_A, ALT_R , CTL_S  ,  SHFT_T,   KC_G ,                                        KC_M,  SFT_N , CTL_E ,  ALT_I , GUI_O , KC_NO,
+        KC_NO,   KC_Z ,  KC_X ,  KC_C  ,   KC_D ,   KC_V ,   KC_NO,   KC_NO,   KC_NO,   KC_NO,    KC_K,   KC_H ,KC_COMM, KC_DOT ,KC_SLSH, ES_PLUS,
+                                 ADJUST, KC_LGUI, ALT_ENT,  KC_SPC, NAV_ESC, SYM_TAB, KC_BSPC, ES_ACUT, KC_RGUI, KC_APP
+    ),
+/*
+ * Base Layer: QWERTY
+ *
+ * ,-------------------------------------------.                              ,-------------------------------------------.
+ * |        |   Q  |   W  |   E  |   R  |   T  |                              |   Y  |   U  |   I  |   O  |   P  |        |
+ * |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
+ * |        |   A  |   S  |   D  |   F  |   G  |                              |   H  |   J  |   K  |   L  |   Ñ  |        |
+ * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
+ * |        |   Z  |   X  |   C  |   V  |   B  |      |      |  |      |      |   N  |   M  |  , ; |  . : |  - _ |        |
+ * `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
+ *                        |      |      |      |      |      |  |      |      |      |      |      |
+ *                        |      |      |      |      |      |  |      |      |      |      |      |
+ *                        `----------------------------------'  `----------------------------------'
+ */
     [_QWERTY] = LAYOUT(
-       KC_NO , KC_Q ,  KC_W   ,  KC_E  ,   KC_R ,   KC_T ,                                        KC_Y,   KC_U ,  KC_I ,   KC_O ,  KC_P ,  ES_GRV,
-       KC_NO , GUI_A, ALT_S   , CTL_D  ,  SFT_F ,   KC_G,                                         KC_H,  SFT_J , CTL_K ,  ALT_L ,GUI_NTIL, KC_NO,
-       KC_NO , KC_Z ,  KC_X   ,  KC_C  ,   KC_V ,   KC_B , ES_LBRC, ES_RBRC,     FKEYS , KC_CAPS, KC_N,   KC_M ,ES_COMM, ES_DOT ,ES_MINS,  ES_PLUS,
-                                 ADJUST, KC_LGUI, ALT_ENT, KC_SPC , NAV_ESC,   SYM_TAB , KC_BSPC, ES_ACUT, KC_RGUI, KC_APP
+      _______, KC_Q ,  KC_W   ,  KC_E  ,   KC_R ,   KC_T ,                                        KC_Y,   KC_U ,  KC_I ,   KC_O ,  KC_P ,  _______,
+      _______, GUI_A, ALT_S   , CTL_D  ,  SFT_F ,   KC_G,                                         KC_H,  SFT_J , CTL_K ,  ALT_L ,GUI_NTIL, _______,
+      _______, KC_Z ,  KC_X   ,  KC_C  ,   KC_V ,   KC_B , _______, _______, _______, _______,    KC_N,   KC_M ,ES_COMM, ES_DOT ,ES_MINS,  _______,
+                                _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
     ),
 /*
  * Base Layer: Dvorak
@@ -139,26 +159,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                  _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
     ),
 
-/*
- * Base Layer: Colemak DH
- *
- * ,-------------------------------------------.                              ,-------------------------------------------.
- * |        |   Q  |   W  |   F  |   P  |   B  |                              |   J  |   L  |   U  |   Y  | ;  : |  ` ^   |
- * |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
- * |        |   A  |   R  |   S  |   T  |   G  |                              |   M  |   N  |   E  |   I  |   O  |        |
- * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
- * |        |   Z  |   X  |   C  |   D  |   V  |      |      |  |      |      |   K  |   H  |  , ; |  . : |  - _ |  + *   |
- * `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
- *                        |Adjust| LGUI | LAlt/| Space| Nav/ |  | Sym/ | Back |  ´ ¨ | RGUI | Menu |
- *                        |      |      | Enter|      | Esc  |  | Tab  |      |      |      |      |
- *                        `----------------------------------'  `----------------------------------'
- */
-    [_COLEMAK_DH] = LAYOUT(
-        KC_NO,   KC_Q ,  KC_W ,  KC_F  ,   KC_P ,   KC_B ,                                        KC_J,   KC_L ,  KC_U ,   KC_Y ,KC_SCLN, ES_GRV,
-        KC_NO,   GUI_A, ALT_R , CTL_S  ,  SHFT_T,   KC_G ,                                        KC_M,  SFT_N , CTL_E ,  ALT_I , GUI_O , KC_NO,
-        KC_NO,   KC_Z ,  KC_X ,  KC_C  ,   KC_D ,   KC_V ,   KC_NO,   KC_NO,   KC_NO,   KC_NO, KC_K,   KC_H ,KC_COMM, KC_DOT ,KC_SLSH, ES_PLUS,
-                                 ADJUST, KC_LGUI, ALT_ENT,  KC_SPC, NAV_ESC, SYM_TAB, KC_BSPC, ES_ACUT, KC_RGUI, KC_APP
-    ),
 
 /*
  * Sym Layer: Numbers and symbols  {[]} 
@@ -291,14 +291,14 @@ bool oled_task_user(void) {
         // Host Keyboard Layer Status
         oled_write_P(PSTR("Layer: "), false);
         switch (get_highest_layer(layer_state|default_layer_state)) {
+            case _COLEMAK_DH:
+                oled_write_P(PSTR("Colemak-DH\n"), false);
+                break;
             case _QWERTY:
                 oled_write_P(PSTR("QWERTY\n"), false);
                 break;
             case _DVORAK:
                 oled_write_P(PSTR("Dvorak\n"), false);
-                break;
-            case _COLEMAK_DH:
-                oled_write_P(PSTR("Colemak-DH\n"), false);
                 break;
             case _NAV:
                 oled_write_P(PSTR("Nav\n"), false);
