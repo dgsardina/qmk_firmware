@@ -106,7 +106,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
  * |        |   A  |   R  |   S  |   T  |   G  |                              |   M  |   N  |   E  |   I  |   O  |        |
  * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
- * |        |   Z  |   X  |   C  |   D  |   V  |      |      |  |      |      |   K  |   H  |  , ; |  . : |  - _ |  + *   |
+ * |        |   Z  |   X  |   C  |   D  |   V  |F-keys|      |  |      |      |   K  |   H  |  , ; |  . : |  - _ |  + *   |
  * `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
  *                        |Adjust| LGUI | LAlt/| Space| Nav/ |  | Sym/ | Back |  ´ ¨ | RGUI | Menu |
  *                        |      |      | Enter|      | Esc  |  | Tab  |      |      |      |      |
@@ -115,7 +115,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_COLEMAK_DH] = LAYOUT(
         KC_NO,   KC_Q ,  KC_W ,  KC_F  ,   KC_P ,   KC_B ,                                        KC_J,   KC_L ,  KC_U ,   KC_Y ,ES_NTIL, ES_GRV,
         KC_NO,   GUI_A, ALT_R , CTL_S  ,  SHFT_T,   KC_G ,                                        KC_M,  SFT_N , CTL_E ,  ALT_I , GUI_O , KC_NO,
-        KC_NO,   KC_Z ,  KC_X ,  KC_C  ,   KC_D ,   KC_V ,   KC_NO,   KC_NO,   KC_NO,   KC_NO,    KC_K,   KC_H ,KC_COMM, KC_DOT ,KC_SLSH, ES_PLUS,
+        KC_NO,   KC_Z ,  KC_X ,  KC_C  ,   KC_D ,   KC_V ,   FKEYS,   KC_NO,   KC_NO,   KC_NO,    KC_K,   KC_H ,KC_COMM, KC_DOT ,KC_SLSH, ES_PLUS,
                                  ADJUST, KC_LGUI, ALT_ENT,  KC_SPC, NAV_ESC, SYM_TAB, KC_BSPC, ES_ACUT, KC_RGUI, KC_APP
     ),
 /*
