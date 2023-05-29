@@ -27,9 +27,6 @@
 // Configure the global tapping term (default: 200ms)
 #define TAPPING_TERM 200
 
-// Lets you roll mod-tap keys
-#define IGNORE_MOD_TAP_INTERRUPT
-
 // Faster trigger of mod when pressing the second key without releasing the first
 #define PERMISSIVE_HOLD
 
