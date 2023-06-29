@@ -18,6 +18,7 @@
 
 enum layers {
     _COLEMAK_DH = 0,
+    _ACC,
     _SYM,
     _NAV,
     _FUNCTION,
@@ -49,8 +50,10 @@ enum layers {
 #define ALT_R LALT_T(KC_R)
 #define CTL_S LCTL_T(KC_S)
 #define SHFT_T LSFT_T(KC_T)
+#define ACC_G LT(_ACC, KC_G)
 
 // Right-hand home row mods
+#define ACC_M LT(_ACC, KC_M)
 #define SFT_N RSFT_T(KC_N)
 #define CTL_E RCTL_T(KC_E)
 #define ALT_I LALT_T(KC_I)
@@ -93,13 +96,34 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
     [_COLEMAK_DH] = LAYOUT(
         KC_NO,   KC_Q ,  KC_W ,  KC_F  ,   KC_P ,   KC_B ,                                        KC_J,   KC_L ,  KC_U ,   KC_Y ,ES_NTIL, ES_GRV,
-        KC_NO,   GUI_A, ALT_R , CTL_S  ,  SHFT_T,   KC_G ,                                        KC_M,  SFT_N , CTL_E ,  ALT_I , GUI_O , _______,
+        KC_NO,   GUI_A, ALT_R , CTL_S  ,  SHFT_T,  ACC_G,                                      ACC_M,  SFT_N , CTL_E ,  ALT_I , GUI_O , _______,
         KC_NO,   KC_Z ,  KC_X ,  KC_C  ,   KC_D ,   KC_V ,   FKEYS,   KC_NO,   KC_NO,   KC_NO,    KC_K,   KC_H ,KC_COMM, KC_DOT ,KC_SLSH, ES_PLUS,
                                  ADJUST, _______, ALT_ENT, NAV_SPC,   KC_NO,   KC_NO,  SYM_BSP, KC_TAB, _______, KC_APP
     ),
 
 /*
- * Sym Layer: Numbers and symbols  {[]} 
+ * Accents Layer: Colemak DH Accents and ES symbols
+ *
+ * ,-------------------------------------------.                              ,-------------------------------------------.
+ * |        |  ¡   |      |      |      |      |                              |      |      |   ú  |   ü  |   ¿  |        |
+ * |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
+ * |        |  á   |      |      |      |      |                              |      |   ñ  |   é  |   í  |   ó  |        |
+ * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
+ * |        |      |      |      |      |      |      |      |  |      |      |      |      |      |      |      |        |
+ * `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
+ *                        |      |      |      |      |      |  |      |      |      |      |      |
+ *                        |      |      |      |      |      |  |      |      |      |      |      |
+ *                        `----------------------------------'  `----------------------------------'
+ */
+    [_ACC] = LAYOUT(
+      _______, ES_IEXL, _______, _______, _______, _______,                                    _______, _______, _______, _______,  ES_IQUE, _______,
+      _______, _______, _______, _______, _______, _______,                                    _______, ES_NTIL, _______, _______,  _______, _______,
+      _______, _______, _______, _______, _______, _______,_______, _______, _______, _______, _______, _______, _______, _______,  _______, _______,
+                                 _______, _______, _______,_______, _______, _______, _______, _______, _______, _______
+    ),
+
+/*
+ * Sym Layer: Numbers and symbols  {[]}
  *
  * ,-------------------------------------------.                              ,-------------------------------------------.
  * |    º   |  1   |  2   |  3   |  4   |  5   |                              |   6  |  7   |  8   |  9   |  0   |   '    |
@@ -211,6 +235,9 @@ bool oled_task_user(void) {
         switch (get_highest_layer(layer_state|default_layer_state)) {
             case _COLEMAK_DH:
                 oled_write_P(PSTR("Colemak-DH\n"), false);
+                break;
+            case _ACC:
+                oled_write_P(PSTR("Accents\n"), false);
                 break;
             case _NAV:
                 oled_write_P(PSTR("Nav\n"), false);
