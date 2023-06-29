@@ -40,21 +40,8 @@ enum layers {
 #define NAV_SPC  LT(    _NAV, KC_SPC)
 #define OSM_LSFT OSM(MOD_LSFT)
 
-// Fixing EURO character in linux default es keymap 
+// Fixing EURO character in linux default es keymap
 #define ES_EUR ALGR(ES_E)    // €
-
-// QWERTY home row modifiers
-// Left-hand home row mods
-#define GUI_A LGUI_T(KC_A)
-#define ALT_S LALT_T(KC_S)
-#define CTL_D LCTL_T(KC_D)
-#define SFT_F LSFT_T(KC_F)
-
-// Right-hand home row mods
-#define SFT_J RSFT_T(KC_J)
-#define CTL_K RCTL_T(KC_K)
-#define ALT_L LALT_T(KC_L)
-#define GUI_NTIL RGUI_T(ES_NTIL)
 
 // Colemak-dhm home row modifiers
 // Left-hand home row mods
@@ -83,7 +70,7 @@ const key_override_t **key_overrides = (const key_override_t *[]){
 };
 
 
-// 
+//
 // Note: LAlt/Enter (ALT_ENT) is not the same thing as the keyboard shortcut Alt+Enter.
 // The notation `mod/tap` denotes a key that activates the modifier `mod` when held down, and
 // produces the key `tap` when tapped (i.e. pressed and released).
