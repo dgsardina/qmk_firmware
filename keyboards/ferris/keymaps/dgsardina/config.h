@@ -35,6 +35,9 @@
   // To use the LED as a Caps Lock indicator
   #define LED_CAPS_LOCK_PIN 24
   #define LED_PIN_ON_STATE 0
+
+  // To sync led status on both halves
+  #define SPLIT_LED_STATE_ENABLE
 #endif
 
 // // Specific for RP2040
