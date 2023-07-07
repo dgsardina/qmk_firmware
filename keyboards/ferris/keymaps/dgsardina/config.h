@@ -31,9 +31,10 @@
 #ifdef CONVERT_TO_LIATRIS
   // Specific for Liatris
   // See: https://docs.splitkb.com/hc/en-us/articles/5799711553820-Power-LED
+  #define LIATRIS_RIGHT_LED 24
 
   // To use the LED as a Caps Lock indicator
-  #define LED_CAPS_LOCK_PIN 24
+  #define LED_CAPS_LOCK_PIN LIATRIS_RIGHT_LED
   #define LED_PIN_ON_STATE 0
 
   // To sync led status on both halves
