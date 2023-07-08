@@ -28,7 +28,8 @@ enum layers {
 /* Aliases for readability */
 #define SYM_BSP  LT(     _SYM, KC_BSPC)
 #define NAV_SPC  LT(     _NAV, KC_SPC)
-#define FUN_TAB  LT(_FUNCTION, KC_TAB)
+#define ACC_TAB  LT(     _ACC, KC_TAB)
+#define FUN_ENT  LT(_FUNCTION, KC_ENT)
 #define ES_EUR   ALGR(ES_E)
 
 /* Colemak-dhm home row modifiers */
@@ -36,9 +37,7 @@ enum layers {
 #define ALT_R LALT_T(KC_R)
 #define CTL_S LCTL_T(KC_S)
 #define SHFT_T LSFT_T(KC_T)
-#define ACC_G LT(_ACC, KC_G)
 
-#define ACC_M LT(_ACC, KC_M)
 #define SFT_N RSFT_T(KC_N)
 #define CTL_E RCTL_T(KC_E)
 #define ALT_I LALT_T(KC_I)
@@ -56,7 +55,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ├──────┼──────┼──────┼──────┼──────┤          ├──────┼──────┼──────┼──────┼──────┤
  * │   Z  │   X  │   C  │   D  │   V  │          │   K  │   H  │  , ; │  . : │  - _ │
  * └──────┴──────┴──────┴─┬────┴──┬───┴───┐ ┌────┴──┬───┴───┬──┴──────┴──────┴──────┘
- *                        │ Enter │Nav/Spc│ │Bsp/Sym│Tab/Fun│
+ *                        │Ent/Fun│Nav/Spc│ │Bsp/Sym│Tab/Acc│
  *                        └───────┴───────┘ └───────┴───────┘
  */
   [_COLEMAK_DH] = LAYOUT(
@@ -65,14 +64,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //│    Q     │    W     │    F     │    P     │    B     │    │    J     │    L     │    U     │    Y     │    Ñ     │
         KC_Q   ,   KC_W   ,   KC_F   ,   KC_P   ,   KC_B   ,        KC_J   ,   KC_L   ,   KC_U   ,   KC_Y   ,  ES_NTIL ,
   //├──────────┼──────────┼──────────┼──────────┼──────────┤    ├──────────┼──────────┼──────────┼──────────┼──────────┤
-  //│    A     │    R     │    S     │    T     │    G     │    │    M     │    N     │    E     │    I     │    O     │
-        GUI_A  ,   ALT_R  ,   CTL_S  ,  SHFT_T  ,   ACC_G  ,        ACC_M  ,   SFT_N  ,   CTL_E  ,   ALT_I  ,   GUI_O  ,
+  //│  A / GUI │  R / ALT │ S / CTL  │ T / SHFT │    G     │    │    M     │    N     │    E     │    I     │    O     │
+        GUI_A  ,   ALT_R  ,   CTL_S  ,  SHFT_T  ,   KC_G   ,        KC_M   ,   SFT_N  ,   CTL_E  ,   ALT_I  ,   GUI_O  ,
   //├──────────┼──────────┼──────────┼──────────┼──────────┤    ├──────────┼──────────┼──────────┼──────────┼──────────┤
   //│    Z     │    X     │    C     │    D     │    V     │    │    K     │    H     │   ,  ;   │   .  :   │   -  _   │
         KC_Z   ,   KC_X   ,   KC_C   ,   KC_D   ,   KC_V   ,        KC_K   ,   KC_H   ,  KC_COMM ,  KC_DOT  ,  KC_SLSH ,
   //└──────────┴──────────┴┬─────────┴──────┬───┴──────────┴─┐┌─┴──────────┴───┬──────┴─────────┬┴──────────┴──────────┘
-  //                       │     Enter      │   Space / Nav  ││   Back / Sym   │    Tab / Fkeys │
-                                KC_ENT      ,    NAV_SPC     ,      SYM_BSP    ,    FUN_TAB
+  //                       │   Ent / Fkeys  │   Space / Nav  ││   Back / Sym   │    Tab / Acc   │
+                                FUN_ENT     ,    NAV_SPC     ,      SYM_BSP    ,    ACC_TAB
   //                       └────────────────┴────────────────┘└────────────────┴────────────────┘
   ),
 
@@ -83,12 +82,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        ES_IEXL ,  ES_LABK ,  ES_LCBR ,  ES_RCBR ,  XXXXXXX ,       ES_GRV  ,  XXXXXXX ,  XXXXXXX ,  XXXXXXX ,  ES_IQUE ,
   //├──────────┼──────────┼──────────┼──────────┼──────────┤    ├──────────┼──────────┼──────────┼──────────┼──────────┤
   //│    á     │     >    │     (    │     )    │          │    │          │    ñ     │    é     │    í     │    ó     │
-       XXXXXXX ,  ES_RABK ,  ES_LPRN ,  ES_RPRN ,  XXXXXXX ,       XXXXXXX ,  XXXXXXX ,  XXXXXXX ,  XXXXXXX ,  XXXXXXX ,
+       XXXXXXX ,  ES_RABK ,  ES_LPRN ,  ES_RPRN ,  XXXXXXX ,       XXXXXXX ,  ES_NTIL ,  XXXXXXX ,  XXXXXXX ,  XXXXXXX ,
   //├──────────┼──────────┼──────────┼──────────┼──────────┤    ├──────────┼──────────┼──────────┼──────────┼──────────┤
   //│          │          │     [    │     ]    │          │    │          │          │    €     │          │          │
        XXXXXXX ,  XXXXXXX ,  ES_LBRC ,  ES_RBRC ,  XXXXXXX ,       XXXXXXX ,  XXXXXXX ,  ES_EUR  ,  XXXXXXX ,  XXXXXXX ,
   //└──────────┴──────────┴┬─────────┴──────┬───┴──────────┴─┐┌─┴──────────┴───┬──────┴─────────┬┴──────────┴──────────┘
-  //                       │     Enter      │   Space / Nav  ││   Back / Sym   │    Tab / Fkeys │
+  //                       │   Ent / Fkeys  │   Space / Nav  ││   Back / Sym   │    Tab / Acc   │
                                  _______    ,     _______    ,      _______    ,     _______
   //                       └────────────────┴────────────────┘└────────────────┴────────────────┘
   ),
@@ -105,7 +104,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //│    |     │    @     │    #     │    ~     │    \     │    │    ^     │    `     │   , ;    │   . :    │    ?     │
        ES_PIPE ,   ES_AT  ,  ES_HASH ,  ES_TILD ,  ES_BSLS ,       ES_CIRC ,  ES_GRV  ,  _______ ,  _______ ,  ES_QUES ,
   //└──────────┴──────────┴┬─────────┴──────┬───┴──────────┴─┐┌─┴──────────┴───┬──────┴─────────┬┴──────────┴──────────┘
-  //                       │      ´  ¨      │     CapsLk     ││   Back / Sym   │    Tab / Fkeys │
+  //                       │      ´  ¨      │     CapsLk     ││   Back / Sym   │    Tab / Acc   │
                                  ES_ACUT    ,     KC_CAPS    ,      _______    ,     _______
   //                       └────────────────┴────────────────┘└────────────────┴────────────────┘
   ),
@@ -145,6 +144,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // ),
   )
 };
+
 
 #ifdef CONVERT_TO_LIATRIS
   /*
