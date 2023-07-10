@@ -158,4 +158,33 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // (Due to technical reasons, high is off and low is on)
     writePinHigh(LIATRIS_RIGHT_LED);
   }
+
+  #ifdef RGBLIGHT_ENABLE
+    void keyboard_post_init_user(void) {
+      // Initialize RGB to static black
+      rgblight_enable_noeeprom();
+      rgblight_sethsv_noeeprom(HSV_BLACK);
+      rgblight_mode_noeeprom(RGBLIGHT_MODE_STATIC_LIGHT);
+    }
+
+    void housekeeping_task_user(void) {
+      switch (get_highest_layer(layer_state | default_layer_state)) {
+        case _COLEMAK_DH:
+            rgblight_setrgb_at(RGB_BLACK, 0);
+            break;
+        case _ACC:
+            rgblight_setrgb_at(RGB_PURPLE, 0);
+            break;
+        case _SYM:
+            rgblight_setrgb_at(RGB_GREEN, 0);
+            break;
+        case _NAV:
+            rgblight_setrgb_at(RGB_BLUE, 0);
+            break;
+        case _FUNCTION:
+            rgblight_setrgb_at(RGB_RED, 0);
+            break;
+      }
+    }
+  #endif
 #endif

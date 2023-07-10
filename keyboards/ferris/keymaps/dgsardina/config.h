@@ -32,6 +32,7 @@
   // Specific for Liatris
   // See: https://docs.splitkb.com/hc/en-us/articles/5799711553820-Power-LED
   #define LIATRIS_RIGHT_LED 24
+  #define LIATRIS_RGB_LED 25
 
   // To use the LED as a Caps Lock indicator
   #define LED_CAPS_LOCK_PIN LIATRIS_RIGHT_LED
@@ -39,6 +40,21 @@
 
   // To sync led status on both halves
   #define SPLIT_LED_STATE_ENABLE
+
+  #ifdef RGBLIGHT_ENABLE
+    #undef WS2812_DI_PIN
+    #define WS2812_DI_PIN LIATRIS_RGB_LED
+
+    #undef RGBLED_NUM
+    #define RGBLED_NUM 2
+
+    #undef RGBLED_SPLIT
+    #define RGBLED_SPLIT {1, 1}
+
+    #define RGBLIGHT_EFFECT_BREATHING
+
+    #define RGBLIGHT_LIMIT_VAL 5
+  #endif
 #endif
 
 // // Specific for RP2040
