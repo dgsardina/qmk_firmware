@@ -15,7 +15,7 @@
  */
 
 #include QMK_KEYBOARD_H
-#include "keymap_spanish.h"
+#include "keymap_us_international_linux.h"
 
 enum layers {
     _COLEMAK_DH = 0,
@@ -30,7 +30,6 @@ enum layers {
 #define NAV_SPC  LT(     _NAV, KC_SPC)
 #define ACC_TAB  LT(     _ACC, KC_TAB)
 #define FUN_ENT  LT(_FUNCTION, KC_ENT)
-#define ES_EUR   ALGR(ES_E)
 
 /* Colemak-dhm home row modifiers */
 #define GUI_A LGUI_T(KC_A)
@@ -61,14 +60,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_COLEMAK_DH] = LAYOUT(
   //                                             Base Layer:    Colemak DH
   //┌──────────┬──────────┬──────────┬──────────┬──────────┐    ┌──────────┬──────────┬──────────┬──────────┬──────────┐
-  //│    Q     │    W     │    F     │    P     │    B     │    │    J     │    L     │    U     │    Y     │    Ñ     │
-        KC_Q   ,   KC_W   ,   KC_F   ,   KC_P   ,   KC_B   ,        KC_J   ,   KC_L   ,   KC_U   ,   KC_Y   ,  ES_NTIL ,
+  //│    Q     │    W     │    F     │    P     │    B     │    │    J     │    L     │    U     │    Y     │   ;  :   │
+        KC_Q   ,   KC_W   ,   KC_F   ,   KC_P   ,   KC_B   ,        KC_J   ,   KC_L   ,   KC_U   ,   KC_Y   ,  KC_SCLN ,
   //├──────────┼──────────┼──────────┼──────────┼──────────┤    ├──────────┼──────────┼──────────┼──────────┼──────────┤
   //│  A / GUI │  R / ALT │ S / CTL  │ T / SHFT │    G     │    │    M     │    N     │    E     │    I     │    O     │
         GUI_A  ,   ALT_R  ,   CTL_S  ,  SHFT_T  ,   KC_G   ,        KC_M   ,   SFT_N  ,   CTL_E  ,   ALT_I  ,   GUI_O  ,
   //├──────────┼──────────┼──────────┼──────────┼──────────┤    ├──────────┼──────────┼──────────┼──────────┼──────────┤
   //│    Z     │    X     │    C     │    D     │    V     │    │    K     │    H     │   ,  ;   │   .  :   │   -  _   │
-        KC_Z   ,   KC_X   ,   KC_C   ,   KC_D   ,   KC_V   ,        KC_K   ,   KC_H   ,  KC_COMM ,  KC_DOT  ,  KC_SLSH ,
+        KC_Z   ,   KC_X   ,   KC_C   ,   KC_D   ,   KC_V   ,        KC_K   ,   KC_H   ,  KC_COMM ,  KC_DOT  ,  US_MINS ,
   //└──────────┴──────────┴┬─────────┴──────┬───┴──────────┴─┐┌─┴──────────┴───┬──────┴─────────┬┴──────────┴──────────┘
   //                       │   Ent / Fkeys  │   Space / Nav  ││   Back / Sym   │    Tab / Acc   │
                                 FUN_ENT     ,    NAV_SPC     ,      SYM_BSP    ,    ACC_TAB
@@ -79,13 +78,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //                                          Accents Layer:    Colemak DH Accents and ES symbols
   //┌──────────┬──────────┬──────────┬──────────┬──────────┐    ┌──────────┬──────────┬──────────┬──────────┬──────────┐
   //│    ¡     │     <    │     {    │     }    │          │    │    `     │          │    ú     │    ü     │    ¿     │
-       ES_IEXL ,  ES_LABK ,  ES_LCBR ,  ES_RCBR ,  XXXXXXX ,       ES_GRV  ,  XXXXXXX ,  XXXXXXX ,  XXXXXXX ,  ES_IQUE ,
+       US_IEXL ,  US_LABK ,  US_LCBR ,  US_RCBR ,  XXXXXXX ,       US_DGRV ,  XXXXXXX ,  US_UACU ,  US_UDIA ,  US_IQUE ,
   //├──────────┼──────────┼──────────┼──────────┼──────────┤    ├──────────┼──────────┼──────────┼──────────┼──────────┤
   //│    á     │     >    │     (    │     )    │          │    │          │    ñ     │    é     │    í     │    ó     │
-       XXXXXXX ,  ES_RABK ,  ES_LPRN ,  ES_RPRN ,  XXXXXXX ,       XXXXXXX ,  ES_NTIL ,  XXXXXXX ,  XXXXXXX ,  XXXXXXX ,
+       US_AACU ,  US_RABK ,  US_LPRN ,  US_RPRN ,  XXXXXXX ,       XXXXXXX ,  US_NTIL ,  US_EACU ,  US_IACU ,  US_OACU ,
   //├──────────┼──────────┼──────────┼──────────┼──────────┤    ├──────────┼──────────┼──────────┼──────────┼──────────┤
   //│          │          │     [    │     ]    │          │    │          │          │    €     │          │          │
-       XXXXXXX ,  XXXXXXX ,  ES_LBRC ,  ES_RBRC ,  XXXXXXX ,       XXXXXXX ,  XXXXXXX ,  ES_EUR  ,  XXXXXXX ,  XXXXXXX ,
+       XXXXXXX ,  XXXXXXX ,  US_LBRC ,  US_RBRC ,  XXXXXXX ,       XXXXXXX ,  XXXXXXX ,  US_EURO ,  XXXXXXX ,  XXXXXXX ,
   //└──────────┴──────────┴┬─────────┴──────┬───┴──────────┴─┐┌─┴──────────┴───┬──────┴─────────┬┴──────────┴──────────┘
   //                       │   Ent / Fkeys  │   Space / Nav  ││   Back / Sym   │    Tab / Acc   │
                                  _______    ,     _______    ,      _______    ,     _______
@@ -99,13 +98,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_1   ,   KC_2   ,   KC_3   ,   KC_4   ,   KC_5   ,        KC_6   ,   KC_7   ,   KC_8   ,   KC_9   ,   KC_0   ,
   //├──────────┼──────────┼──────────┼──────────┼──────────┤    ├──────────┼──────────┼──────────┼──────────┼──────────┤
   //│    !     │    \"    │    '     │    $     │    %     │    │    &     │    /     │    =     │    *     │    +     │
-       ES_EXLM ,  ES_DQUO ,  ES_QUOT ,  ES_DLR  ,  ES_PERC ,       ES_AMPR ,  ES_SLSH ,  ES_EQL  ,  ES_ASTR ,  ES_PLUS ,
+       US_EXLM ,  US_DQUO ,  US_QUOT ,  US_DLR  ,  US_PERC ,       US_AMPR ,  US_SLSH ,  US_EQL  ,  US_ASTR ,  US_PLUS ,
   //├──────────┼──────────┼──────────┼──────────┼──────────┤    ├──────────┼──────────┼──────────┼──────────┼──────────┤
   //│    |     │    @     │    #     │    ~     │    \     │    │    ^     │    `     │   , ;    │   . :    │    ?     │
-       ES_PIPE ,   ES_AT  ,  ES_HASH ,  ES_TILD ,  ES_BSLS ,       ES_CIRC ,  ES_GRV  ,  _______ ,  _______ ,  ES_QUES ,
+       US_PIPE ,   US_AT  ,  US_HASH ,  US_TILD ,  US_BSLS ,       US_CIRC ,  US_DGRV ,  _______ ,  _______ ,  US_QUES ,
   //└──────────┴──────────┴┬─────────┴──────┬───┴──────────┴─┐┌─┴──────────┴───┬──────┴─────────┬┴──────────┴──────────┘
   //                       │      ´  ¨      │     CapsLk     ││   Back / Sym   │    Tab / Acc   │
-                                 ES_ACUT    ,     KC_CAPS    ,      _______    ,     _______
+                                 US_ACUT    ,     KC_CAPS    ,      _______    ,     _______
   //                       └────────────────┴────────────────┘└────────────────┴────────────────┘
   ),
 
