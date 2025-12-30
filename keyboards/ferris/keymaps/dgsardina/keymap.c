@@ -63,7 +63,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //│    Q     │    W     │    F     │    P     │    B     │    │    J     │    L     │    U     │    Y     │   ;  :   │
         KC_Q   ,   KC_W   ,   KC_F   ,   KC_P   ,   KC_B   ,        KC_J   ,   KC_L   ,   KC_U   ,   KC_Y   ,  KC_SCLN ,
   //├──────────┼──────────┼──────────┼──────────┼──────────┤    ├──────────┼──────────┼──────────┼──────────┼──────────┤
-  //│  A / GUI │  R / ALT │ S / CTL  │ T / SHFT │    G     │    │    M     │    N     │    E     │    I     │    O     │
+  //│  A / GUI │  R / ALT │ S / CTL  │ T / SHFT │    G     │    │    M     │ N / SHFT │ E / CTL  │ I / ALT  │ O / GUI  │
         GUI_A  ,   ALT_R  ,   CTL_S  ,  SHFT_T  ,   KC_G   ,        KC_M   ,   SFT_N  ,   CTL_E  ,   ALT_I  ,   GUI_O  ,
   //├──────────┼──────────┼──────────┼──────────┼──────────┤    ├──────────┼──────────┼──────────┼──────────┼──────────┤
   //│    Z     │    X     │    C     │    D     │    V     │    │    K     │    H     │   ,  ;   │   .  :   │   -  _   │
@@ -114,8 +114,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //│          │          │          │          │          │    │          │    End   │   Home   │          │          │
        XXXXXXX ,  XXXXXXX ,  XXXXXXX ,  XXXXXXX ,  XXXXXXX ,       XXXXXXX ,  KC_END  ,  KC_HOME ,  XXXXXXX ,  XXXXXXX ,
   //├──────────┼──────────┼──────────┼──────────┼──────────┤    ├──────────┼──────────┼──────────┼──────────┼──────────┤
-  //│    GUI   │    Alt   │   Ctrl   │    GUI   │          │    │    ←     │    ↓     │    ↑     │    →     │          │
-       KC_LGUI ,  KC_LALT ,  KC_LCTL ,  KC_RGUI ,  XXXXXXX ,       KC_LEFT ,  KC_DOWN ,  KC_UP   ,  KC_RGHT ,  XXXXXXX ,
+  //│    GUI   │    Alt   │   Ctrl   │   Shift  │          │    │    ←     │    ↓     │    ↑     │    →     │          │
+       KC_LGUI ,  KC_LALT ,  KC_LCTL ,  KC_LSFT ,  XXXXXXX ,       KC_LEFT ,  KC_DOWN ,  KC_UP   ,  KC_RGHT ,  XXXXXXX ,
   //├──────────┼──────────┼──────────┼──────────┼──────────┤    ├──────────┼──────────┼──────────┼──────────┼──────────┤
   //│          │          │          │          │          │    │          │   PgDn   │   PgUp   │          │          │
        XXXXXXX ,  XXXXXXX ,  XXXXXXX ,  XXXXXXX ,  XXXXXXX ,       XXXXXXX ,  KC_PGDN ,  KC_PGUP ,  XXXXXXX ,  XXXXXXX ,
