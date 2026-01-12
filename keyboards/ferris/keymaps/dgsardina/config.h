@@ -57,6 +57,10 @@
   #endif
 #endif
 
+// // Workaround for burnt default pin
+// #undef SOFT_SERIAL_PIN
+// #define SOFT_SERIAL_PIN 13   // We will use GP12 for communication
+
 // // Specific for RP2040
 // // See https://docs.qmk.fm/#/platformdev_rp2040
 //
